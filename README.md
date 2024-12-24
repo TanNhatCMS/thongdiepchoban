@@ -73,25 +73,49 @@
  - Link [https://thongdiepchoban.pages.dev/gioi-thieu](https://thongdiepchoban.pages.dev/gioi-thieu)
 # Tháng 1
  - Link [https://thongdiepchoban.pages.dev/thang-1](https://thongdiepchoban.pages.dev/thang-1)
+ - QR Code: 
+ - ![QR Tháng 1](https://263.org.vn/thong-diep-thang-1/qr)
 # Tháng 2
  - Link [https://thongdiepchoban.pages.dev/thang-2](https://thongdiepchoban.pages.dev/thang-2)
+ - QR Code:
+ - ![QR Tháng 2](https://263.org.vn/thong-diep-thang-2/qr)
 # Tháng 3
  - Link [https://thongdiepchoban.pages.dev/thang-3](https://thongdiepchoban.pages.dev/thang-3)
+ - QR Code:
+ - ![QR Tháng 3](https://263.org.vn/thong-diep-thang-3/qr)
 # Tháng 4
  - Link [https://thongdiepchoban.pages.dev/thang-4](https://thongdiepchoban.pages.dev/thang-4)
+ - QR Code:
+ - ![QR Tháng 4](https://263.org.vn/thong-diep-thang-4/qr)
 # Tháng 5
  - Link [https://thongdiepchoban.pages.dev/thang-5](https://thongdiepchoban.pages.dev/thang-5)
+ - QR Code:
+ - ![QR Tháng 5](https://263.org.vn/thong-diep-thang-5/qr)
 # Tháng 6
  - Link [https://thongdiepchoban.pages.dev/thang-6](https://thongdiepchoban.pages.dev/thang-6)
+ - QR Code:
+ - ![QR Tháng 6](https://263.org.vn/thong-diep-thang-6/qr)
 # Tháng 7
  - Link [https://thongdiepchoban.pages.dev/thang-7](https://thongdiepchoban.pages.dev/thang-7)
+ - QR Code:
+ - ![QR Tháng 7](https://263.org.vn/thong-diep-thang-7/qr)
 # Tháng 8
  - Link [https://thongdiepchoban.pages.dev/thang-8](https://thongdiepchoban.pages.dev/thang-8)
+ - QR Code:
+ - ![QR Tháng 8](https://263.org.vn/thong-diep-thang-8/qr)
 # Tháng 9
  - Link [https://thongdiepchoban.pages.dev/thang-9](https://thongdiepchoban.pages.dev/thang-9)
+ - QR Code:
+ - ![QR Tháng 9](https://263.org.vn/thong-diep-thang-9/qr)
 # Tháng 10
  - Link [https://thongdiepchoban.pages.dev/thang-10](https://thongdiepchoban.pages.dev/thang-10)
+ - QR Code:
+ - ![QR Tháng 10](https://263.org.vn/thong-diep-thang-10/qr)
 # Tháng 11
  - Link [https://thongdiepchoban.pages.dev/thang-11](https://thongdiepchoban.pages.dev/thang-11)
+ - QR Code:
+ - ![QR Tháng 11](https://263.org.vn/thong-diep-thang-11/qr)
 # Tháng 12
  - Link [https://thongdiepchoban.pages.dev/thang-12](https://thongdiepchoban.pages.dev/thang-12)
+ - QR Code:
+ - ![QR Tháng 12](https://263.org.vn/thong-diep-thang-12/qr)
