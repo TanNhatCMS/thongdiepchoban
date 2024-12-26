@@ -1,7 +1,12 @@
 {
-  "name": "lich-itc",
+  "name": "thongdiepchoban",
   "version": "0.1.0",
   "private": true,
+  "author": "Nhóm Ba Trái Thanh Long",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanNhatCMS/thongdiepchoban.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,11 +14,11 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "husky install .husky"
+    "postinstall": "husky install .husky",
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
-    "autoprefixer": "^10.4.20",
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -24,8 +29,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
     "typescript": "^5"
   },
   "engines": {
