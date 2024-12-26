@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {Metadata} from "next";
 import styles from '../styles/january.module.css';
-import thang1Image from '../../../public/assets/images/january.jpg';
+import januaryImage from '../../../public/assets/images/january.jpg';
 
 export const metadata: Metadata = {
     title: "Thông điệp tháng 1",
@@ -27,7 +27,7 @@ export default function January() {
               </span>
           </div>
           <Image
-              src={thang1Image}
+              src={januaryImage}
               alt="thang1"
               fill // Sử dụng fill để lấp đầy container
               style={{objectFit: 'contain'}} // Giữ nguyên tỷ lệ và vừa vặn
