@@ -28,7 +28,7 @@ export default function January() {
           </div>
           <Image
               src={januaryImage}
-              alt="thang1"
+              alt="Tháng 1"
               fill // Sử dụng fill để lấp đầy container
               style={{objectFit: 'contain'}} // Giữ nguyên tỷ lệ và vừa vặn
               priority // Tải hình ảnh này trước

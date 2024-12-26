@@ -1,0 +1,33 @@
+.cauChuyen {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.thongDiep {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(227, 226, 226, 0.716);
+    font-weight: 600;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.7); /* aliceblue with opacity */
+    border-radius: 20px;
+}
+
+.cauChuyen img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.text {
+    font-family: "Ysabeau SC", serif;
+}
