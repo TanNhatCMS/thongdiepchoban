@@ -1,4 +1,5 @@
 'use client';
+
 import { useRouter } from 'next/navigation';
 
 export default function Menus() {
@@ -23,19 +24,28 @@ export default function Menus() {
   };
 
   return (
-    <div className="list-group" style={{ width: '256px' }}>
-      <div className="list-group-item list-group-item-action active">
-        Thông điệp 12 tháng
+    <div
+      className="d-flex justify-content-center align-items-center vh-100"
+      style={{ backgroundColor: '#f8f9fa' }}
+    >
+      <div className="card" style={{ width: '300px' }}>
+        <div className="card-header text-center">
+          <h5>Thông điệp 12 tháng</h5>
+        </div>
+        <div className="card-body p-0">
+          <div className="list-group">
+            {months.map((month, index) => (
+              <button
+                key={index + 1}
+                className="list-group-item list-group-item-action text-center"
+                onClick={() => handleNavigation(index + 1)}
+              >
+                {month}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
-      {months.map((month, index) => (
-        <button
-          key={index + 1}
-          className="list-group-item list-group-item-action"
-          onClick={() => handleNavigation(index + 1)}
-        >
-          {month}
-        </button>
-      ))}
     </div>
   );
 }
