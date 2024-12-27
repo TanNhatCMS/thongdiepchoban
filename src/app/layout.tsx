@@ -1,5 +1,5 @@
-import "./styles/globals.css";
-import React from "react";
+import './styles/globals.css';
+import React from 'react';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 export default function RootLayout({
@@ -9,9 +9,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-        <body>
-          <AntdRegistry>{children}</AntdRegistry>
-        </body>
+      <body>
+        <AntdRegistry>{children}</AntdRegistry>
+      </body>
     </html>
   );
 }
