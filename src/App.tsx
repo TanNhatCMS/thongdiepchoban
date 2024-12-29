@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 import './App.css'
 import Head from './components/Head';
 import NoPage from './pages/404';
@@ -19,6 +20,10 @@ import PerpetualCalendar from './pages/perpetualcalendar';
 import Demo from './pages/demo';
 
 function App() {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const date = queryParams.get("date");
+
   return (
         <Routes>
           <Route
@@ -160,7 +165,7 @@ function App() {
             path="/pages/lich-van-nien-lich-van-su"
             element={(
               <>
-                <Navigate to="/lich-van-nien-lich-van-su" />
+                <Navigate to={`/lich-van-nien-lich-van-su/?date=${date}`} />
               </>
             )}
           />
