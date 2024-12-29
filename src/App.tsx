@@ -15,6 +15,8 @@ import September from './pages/september';
 import October from './pages/october';
 import November from './pages/november';
 import December from './pages/december';
+import PerpetualCalendar from './pages/perpetualcalendar';
+import Demo from './pages/demo';
 
 function App() {
   return (
@@ -143,6 +145,24 @@ function App() {
               <>
                 <Head title="Thông điệp tháng 12" />
                 <December />
+              </>
+            )}
+          />
+          <Route
+            path="/lich-van-nien-lich-van-su"
+            element={(
+              <>
+                <Head title="Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành" />
+                <PerpetualCalendar />
+              </>
+            )}
+          />
+          <Route
+            path="/demo"
+            element={(
+              <>
+                <Head title="Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành" />
+                <Demo />
               </>
             )}
           />

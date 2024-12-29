@@ -1,3 +1,4 @@
+
 .cauChuyen12 {
     position: relative;
     height: 100%;
@@ -32,6 +33,10 @@
 }
 
 .thongDiep12 {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
     font-size: 1.5rem;
     text-shadow: 2px 2px 4px rgba(2, 0, 10, 0.596);
     position: relative;
