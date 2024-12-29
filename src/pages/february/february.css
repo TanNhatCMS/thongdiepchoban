@@ -4,7 +4,7 @@
     height: 100%;
     overflow: hidden;
 }
-.cauChuyen {
+.cauChuyen2 {
     position: relative;
     height: 100%;
     display: flex;
@@ -13,7 +13,7 @@
     text-align: center;
     flex-direction: column;
 }
-.cauChuyen img {
+.cauChuyen2 img {
     position: absolute;
     top: 0;
     left: 0;
@@ -22,7 +22,7 @@
     object-fit: contain;
     z-index: -1;
 }
-.cauChuyen::before {
+.cauChuyen2::before {
     content: "";
     position: absolute;
     top: 0;
@@ -34,7 +34,7 @@
     filter: blur(8px);
     z-index: -2;
 }
-.thongDiep {
+.thongDiep2 {
     font-size: 1.5rem;
     text-shadow: 2px 2px 4px rgba(48, 41, 133, 0.716);
     position: relative;
@@ -42,7 +42,7 @@
     /* color: rgb(152, 138, 232); */
     font-weight: 600; /* Thay đổi màu chữ nếu cần */ /* Thay đổi kích thước chữ nếu cần */
 }
-.thongDiep p {
+.thongDiep2 p {
     font-family: "Ysabeau SC", serif;
     color: rgba(218, 228, 217, 0.808);
 }
