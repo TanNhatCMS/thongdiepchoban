@@ -2,7 +2,7 @@ import type React from 'react';
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-const Head: React.FC<{title: any}> = ({ title }) => {
+const Head: React.FC<{title: string}> = ({ title }) => {
   const location = useLocation()
 
   useEffect(() => {
