@@ -23,7 +23,6 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.5.0",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "axios": "^1.7.9",
@@ -34,7 +33,6 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
     "typescript-eslint": "^8.18.2"
   },

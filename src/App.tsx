@@ -20,7 +20,6 @@ import Demo from './pages/demo';
 
 function App() {
   return (
-      <BrowserRouter>
         <Routes>
           <Route
             path="/"
@@ -169,7 +168,6 @@ function App() {
           <Route path="/index.html" element={<Navigate to="/" />} />
           <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
-      </BrowserRouter>
   )
 }
 
