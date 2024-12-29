@@ -8,11 +8,12 @@
     flex-direction: column;
 }
 .cauChuyen4 img {
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+
     object-fit: contain;
     z-index: -1;
 }
@@ -22,13 +23,17 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url('../../assets/images/april.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(8px);
     z-index: -2;
 }
 .thongDiep4 {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
     font-size: 1.5rem;
     text-shadow: 2px 2px 4px rgba(147, 169, 97, 0.716);
     position: relative;

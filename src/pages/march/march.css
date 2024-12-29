@@ -1,3 +1,5 @@
+
+
 .cauChuyen3 {
     position: relative;
     height: 100%;
@@ -32,6 +34,10 @@
 }
 
 .thongDiep3 {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
     font-size: 1.5rem;
     text-shadow: 3px 2px 2px rgb(0, 0, 0);
     position: relative;
@@ -44,7 +50,6 @@
     /* Điều chỉnh giá trị này để dời chữ xuống dưới */
 
 }
-
 .thongDiep3 p {
     font-family: "Ysabeau SC", serif;
     color: rgba(216, 233, 24, 0.923);

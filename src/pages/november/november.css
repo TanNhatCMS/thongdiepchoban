@@ -1,3 +1,4 @@
+
 .cauChuyen11 {
     position: relative;
     height: 100%;
@@ -7,7 +8,6 @@
     text-align: center;
     flex-direction: column;
 }
-
 .cauChuyen11 img {
     position: absolute;
     top: 0;
@@ -32,6 +32,10 @@
 }
 
 .thongDiep11 {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
     font-size: 1.5rem;
     text-shadow: 2px 2px 4px rgba(9, 9, 9, 0.74);
     position: relative;
