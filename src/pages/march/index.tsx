@@ -1,5 +1,5 @@
 import type React from 'react'
-import imgMarch from '../../assets/images/March.jpg'
+import imgMarch from '../../assets/images/march.jpg'
 import './march.css'
 const March: React.FC = () => (
   <>
