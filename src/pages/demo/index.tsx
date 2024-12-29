@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from "react-router-dom";
 import axios from 'axios'
 
 //import './perpetualcalendar.css';
 
 const Demo: React.FC = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const date = queryParams.get("date");
+
   const [result, setResult] = useState<any>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -11,13 +16,17 @@ const Demo: React.FC = () => {
   const [box1Content, setBox1Content] = useState<string>('')
   const [box2Content, setBox2Content] = useState<string>('')
   const [box3Content, setBox3Content] = useState<string>('')
+  const fixURL = (url: string) => {
+    return url.replaceAll('/pages/lich-van-nien-lich-van-su/', '/demo/');
+  }
   const fetchData = async () => {
+    const day = date ? date : new Date().toISOString().slice(0, 10)
     const payload = {
       method: 'DetailDate',
       id: 1,
       params: {
         routin: 'LichvansuApi',
-        date: '30-12-2024',
+        date: day,
       },
     }
 
@@ -34,10 +43,11 @@ const Demo: React.FC = () => {
           },
         }
       )
-      setBox1Content(response.data?.result?.box1 || '')
-      setBox2Content(response.data?.result?.box2 || '')
-      setBox3Content(response.data?.result?.box3 || '')
+      setBox1Content(fixURL(response.data?.result?.box1) || '')
+      setBox2Content(fixURL(response.data?.result?.box2) || '')
+      setBox3Content(fixURL(response.data?.result?.box3) || '')
       setResult(response.data)
+      console.log(response.data?.result?.box1 || '')
     } catch (err: any) {
       setError(err.message || 'An error occurred')
     } finally {

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Head from './components/Head';
 import NoPage from './pages/404';
@@ -153,6 +153,14 @@ function App() {
               <>
                 <Head title="Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành" />
                 <PerpetualCalendar />
+              </>
+            )}
+          />
+          <Route
+            path="/pages/lich-van-nien-lich-van-su"
+            element={(
+              <>
+                <Navigate to="/lich-van-nien-lich-van-su" />
               </>
             )}
           />
