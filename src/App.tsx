@@ -6,6 +6,11 @@ import Home from './pages/home';
 import January from './pages/january';
 import February from './pages/february';
 import March from './pages/march';
+import April from './pages/april'
+import June from './pages/june';
+import May from './pages/may';
+import July from './pages/july';
+import August from './pages/august';
 
 function App() {
   return (
@@ -61,7 +66,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 4" />
-                <February />
+                <April />
               </>
             )}
           />
@@ -70,7 +75,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 5" />
-                <February />
+                <May />
               </>
             )}
           />
@@ -79,7 +84,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 6" />
-                <February />
+                <June />
               </>
             )}
           />
@@ -88,7 +93,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 7" />
-                <February />
+                <July />
               </>
             )}
           />
@@ -97,7 +102,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 8" />
-                <February />
+                <August />
               </>
             )}
           />
@@ -106,7 +111,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 9" />
-                <February />
+                {/*<September />*/}
               </>
             )}
           />
@@ -115,7 +120,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 10" />
-                <February />
+                {/*<October />*/}
               </>
             )}
           />
@@ -124,7 +129,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 11" />
-                <February />
+                {/*<November />*/}
               </>
             )}
           />
@@ -133,7 +138,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 12" />
-                <February />
+                {/*<December />*/}
               </>
             )}
           />
