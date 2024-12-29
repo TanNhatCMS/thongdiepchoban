@@ -17,13 +17,12 @@ import October from './pages/october';
 import November from './pages/november';
 import December from './pages/december';
 import PerpetualCalendar from './pages/perpetualcalendar';
-import Demo from './pages/demo';
 
 function App() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const date = queryParams.get("date");
-
+  const title = date ? `Xem ngày ${date} | Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành` : `Xem Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành`
   return (
         <Routes>
           <Route
@@ -156,7 +155,7 @@ function App() {
             path="/lich-van-nien-lich-van-su"
             element={(
               <>
-                <Head title="Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành" />
+                <Head title={title} />
                 <PerpetualCalendar />
               </>
             )}
@@ -166,15 +165,6 @@ function App() {
             element={(
               <>
                 <Navigate to={`/lich-van-nien-lich-van-su/?date=${date}`} />
-              </>
-            )}
-          />
-          <Route
-            path="/demo"
-            element={(
-              <>
-                <Head title="Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành" />
-                <Demo />
               </>
             )}
           />

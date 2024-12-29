@@ -8,11 +8,9 @@ const PerpetualCalendar: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const date = queryParams.get("date");
-
   const [result, setResult] = useState<any>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-
   const [box1Content, setBox1Content] = useState<string>('')
   const [box2Content, setBox2Content] = useState<string>('')
   const [box3Content, setBox3Content] = useState<string>('')
