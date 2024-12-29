@@ -17,7 +17,7 @@ const Demo: React.FC = () => {
   const [box2Content, setBox2Content] = useState<string>('')
   const [box3Content, setBox3Content] = useState<string>('')
   const fixURL = (url: string) => {
-    return url.replaceAll('/pages/lich-van-nien-lich-van-su/', '/demo/');
+    return url.replaceAll('/pages/lich-van-nien-lich-van-su/', '/lich-van-nien-lich-van-su/');
   }
   const fetchData = async () => {
     const day = date ? date : new Date().toISOString().slice(0, 10)
