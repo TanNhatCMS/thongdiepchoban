@@ -3,8 +3,8 @@ import imgJune from '../../assets/images/june.jpg'
 import './june.css'
 const June: React.FC = () => (
   <>
-    <div className="cauChuyen">
-      <div className="thongDiep" style={{ padding: 100 }}>
+    <div className="cauChuyen6">
+      <div className="thongDiep6" style={{ padding: 100 }}>
         <p style={{ margin: 30 }}>
           Học tập không có giới hạn.
           <br />

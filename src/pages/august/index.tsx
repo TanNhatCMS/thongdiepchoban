@@ -3,8 +3,8 @@ import imgAugust from '../../assets/images/august.jpg'
 import './august.css'
 const August: React.FC = () => (
   <>
-    <div className="cauChuyen">
-      <div className="thongDiep">
+    <div className="cauChuyen8">
+      <div className="thongDiep8">
         <p style={{ margin: 30, fontSize: 22 }}>
           Mọi công việc thành đạt
           <br />
