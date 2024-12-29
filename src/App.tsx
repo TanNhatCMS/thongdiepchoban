@@ -11,6 +11,10 @@ import June from './pages/june';
 import May from './pages/may';
 import July from './pages/july';
 import August from './pages/august';
+import September from './pages/september';
+import October from './pages/october';
+import November from './pages/november';
+import December from './pages/december';
 
 function App() {
   return (
@@ -111,7 +115,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 9" />
-                {/*<September />*/}
+                <September />
               </>
             )}
           />
@@ -120,7 +124,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 10" />
-                {/*<October />*/}
+                <October />
               </>
             )}
           />
@@ -129,7 +133,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 11" />
-                {/*<November />*/}
+                <November />
               </>
             )}
           />
@@ -138,7 +142,7 @@ function App() {
             element={(
               <>
                 <Head title="Thông điệp tháng 12" />
-                {/*<December />*/}
+                <December />
               </>
             )}
           />
