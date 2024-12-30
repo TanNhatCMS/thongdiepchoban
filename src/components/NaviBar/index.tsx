@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom' // Import Link từ react-router-dom
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -9,6 +9,7 @@ import logoITC from '../../assets/images/logo-svg-ITC.svg'
 
 const NaviBar: React.FC = () => {
   const location = useLocation()
+  const [showOffcanvas, setShowOffcanvas] = useState(false)
   const isActive = (path: string) => location.pathname === path
   const linkPerpetualCalendar = () => {
     // nếu location có tháng
@@ -40,11 +41,16 @@ const NaviBar: React.FC = () => {
       hash: '',
     }
   }
+
+  const handleLinkClick = () => {
+    setShowOffcanvas(false) // Đóng sidebar khi nhấp vào link
+  }
+
   return (
     <>
       <Navbar expand="sm" className="bg-body-tertiary mb-3">
         <Container fluid>
-          <Navbar.Brand >
+          <Navbar.Brand>
             <img
               alt="ITC Vươn Tầm Cao Mới"
               src={logoITC}
@@ -54,7 +60,10 @@ const NaviBar: React.FC = () => {
             />{' '}
             ITC Vươn Tầm Cao Mới
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
+          <Navbar.Toggle
+            aria-controls="offcanvasNavbar-expand-sm"
+            onClick={() => setShowOffcanvas(!showOffcanvas)} // Toggle sidebar
+          />
           <Navbar.Offcanvas
             id="offcanvasNavbar-expand-sm"
             aria-labelledby="offcanvasNavbarLabel-expand-sm"
@@ -73,6 +82,7 @@ const NaviBar: React.FC = () => {
                   className={
                     isActive('/lich-van-nien-lich-van-su') ? 'active' : ''
                   }
+                  onClick={handleLinkClick} // Đóng sidebar khi nhấp vào link
                 >
                   Lịch vạn niên - Lịch vạn sự
                 </Nav.Link>
@@ -89,6 +99,7 @@ const NaviBar: React.FC = () => {
                           as={Link}
                           to={path}
                           className={isActive(path) ? 'active' : ''}
+                          onClick={handleLinkClick} // Đóng sidebar khi nhấp vào link
                         >
                           Thông điệp tháng {index + 1}
                         </NavDropdown.Item>
