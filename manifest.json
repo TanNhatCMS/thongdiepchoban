@@ -1,7 +1,7 @@
 {
   "name": "Thông Điệp Cho Bạn - ITC VƯƠN TẦM CAO MỚI",
   "short_name": "Thông Điệp Cho Bạn",
-  "start_url": "%REACT_APP_START_URL%",
+  "start_url": "%CF_PAGES_URL%",
   "display": "standalone",
   "background_color": "#FFD700",
   "theme_color": "#FFD700",
