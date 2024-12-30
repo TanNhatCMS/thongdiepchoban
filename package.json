@@ -37,7 +37,6 @@
     "i": "^0.3.7",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
-    "react-bootstrap-sidebar-menu": "^2.0.3",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
     "typescript-eslint": "^8.18.2"

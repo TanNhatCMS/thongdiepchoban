@@ -50,9 +50,6 @@ importers:
       react-bootstrap:
         specifier: ^2.10.7
         version: 2.10.7(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-bootstrap-sidebar-menu:
-        specifier: ^2.0.3
-        version: 2.0.3(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
@@ -1968,12 +1965,6 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
-
-  react-bootstrap-sidebar-menu@2.0.3:
-    resolution: {integrity: sha512-lm5LrOcExFQtKaLSSZ8K2VSnqiROsDgY6WRnitev1eELlrBAyumrdk6ckq5vG8iCeN1GUVKUahIG21LyAOoWRA==}
-    peerDependencies:
-      react: '>=16.14.0'
-      react-dom: '>=16.14.0'
 
   react-bootstrap@2.10.7:
     resolution: {integrity: sha512-w6mWb3uytB5A18S2oTZpYghcOUK30neMBBvZ/bEfA+WIF2dF4OGqjzoFVMpVXBjtyf92gkmRToHlddiMAVhQqQ==}
@@ -4398,14 +4389,6 @@ snapshots:
   punycode@2.3.1: {}
 
   queue-microtask@1.2.3: {}
-
-  react-bootstrap-sidebar-menu@2.0.3(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      react: 19.0.0
-      react-bootstrap: 2.10.7(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-dom: 19.0.0(react@19.0.0)
-    transitivePeerDependencies:
-      - '@types/react'
 
   react-bootstrap@2.10.7(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
