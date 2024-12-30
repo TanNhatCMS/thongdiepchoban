@@ -1,25 +1,58 @@
-import React from 'react';
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom' // Import Link từ react-router-dom
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Offcanvas from 'react-bootstrap/Offcanvas'
-import logoITC from  '../../assets/images/logo-svg-ITC.svg'
+import logoITC from '../../assets/images/logo-svg-ITC.svg'
 
 const NaviBar: React.FC = () => {
+  const location = useLocation()
+  const isActive = (path: string) => location.pathname === path
+  const linkPerpetualCalendar = () => {
+    // nếu location có tháng
+    const url = '/lich-van-nien-lich-van-su'
+    let search = ''
+    switch (location.pathname) {
+      case '/thang-1':
+      case '/thang-2':
+      case '/thang-3':
+      case '/thang-4':
+      case '/thang-5':
+      case '/thang-6':
+      case '/thang-7':
+      case '/thang-8':
+      case '/thang-9':
+      case '/thang-10':
+      case '/thang-11':
+      case '/thang-12': {
+        const monthParameter = location.pathname.split('-')[1]
+        search = `?date=${monthParameter}-1-2025`
+        break
+      }
+      default:
+        break
+    }
+    return {
+      pathname: url,
+      search: search,
+      hash: '',
+    }
+  }
   return (
     <>
       <Navbar expand="sm" className="bg-body-tertiary mb-3">
         <Container fluid>
-          <Navbar.Brand>
+          <Navbar.Brand >
             <img
               alt="ITC Vươn Tầm Cao Mới"
               src={logoITC}
               width="50"
               height="50"
-              className="d-inline-block align-top"
+              className="d-inline-block"
             />{' '}
-               ITC Vươn Tầm Cao Mới
+            ITC Vươn Tầm Cao Mới
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
           <Navbar.Offcanvas
@@ -34,21 +67,35 @@ const NaviBar: React.FC = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/lich-van-nien-lich-van-su">
-                  Lịch vạn niên - Lịch vạn sự{' '}
+                <Nav.Link
+                  as={Link}
+                  to={linkPerpetualCalendar()}
+                  className={
+                    isActive('/lich-van-nien-lich-van-su') ? 'active' : ''
+                  }
+                >
+                  Lịch vạn niên - Lịch vạn sự
                 </Nav.Link>
                 <NavDropdown
                   title="Thông điệp 12 tháng"
                   id="offcanvasNavbarDropdown-expand-sm"
                 >
-                  {Array.from({ length: 12 }, (_, index) => (
-                    <>
-                      <NavDropdown.Item href={`/thang-${index + 1}`}>
-                        Thông điệp tháng {index + 1}
-                      </NavDropdown.Item>
-                      {index < 11 && <NavDropdown.Divider />}
-                    </>
-                  ))}
+                  {Array.from({ length: 12 }, (_, index) => {
+                    const path = `/thang-${index + 1}`
+                    return (
+                      <>
+                        <NavDropdown.Item
+                          key={index}
+                          as={Link}
+                          to={path}
+                          className={isActive(path) ? 'active' : ''}
+                        >
+                          Thông điệp tháng {index + 1}
+                        </NavDropdown.Item>
+                        {index < 11 && <NavDropdown.Divider />}
+                      </>
+                    )
+                  })}
                 </NavDropdown>
               </Nav>
             </Offcanvas.Body>
@@ -58,4 +105,5 @@ const NaviBar: React.FC = () => {
     </>
   )
 }
+
 export default NaviBar
