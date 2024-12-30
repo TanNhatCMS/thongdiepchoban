@@ -1,0 +1,15 @@
+{
+  "name": "Thông Điệp Cho Bạn - ITC VƯƠN TẦM CAO MỚI",
+  "short_name": "Thông Điệp Cho Bạn",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFD700",
+  "theme_color": "#FFD700",
+  "icons": [
+    {
+      "src": "/images/logo-ITC.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import type React from 'react'
 import imgFebruary from '../../assets/images/february.jpg'
 import './february.css'
+
 const February: React.FC = () => (
   <>
     <div className="cauChuyen2">
