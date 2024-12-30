@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
 import axios from 'axios'
-import './perpetualcalendar.css';
 
 const PerpetualCalendar: React.FC = () => {
 
@@ -58,9 +57,9 @@ const PerpetualCalendar: React.FC = () => {
   }, [])
 
   return (
-    <div>
+    <>
       {result && (
-        <div>
+        <>
           <div className="container row pt pb bg-body">
             <div
               className="col col6"
@@ -80,9 +79,9 @@ const PerpetualCalendar: React.FC = () => {
                  dangerouslySetInnerHTML={{ __html: box3Content }}
             />
           </div>
-        </div>
+        </>
       )}
-    </div>
+    </>
   )
 }
 export default PerpetualCalendar
