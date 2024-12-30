@@ -46,13 +46,13 @@ const NaviBar: React.FC = () => {
         <Container fluid>
           <Navbar.Brand >
             <img
-              alt="Chào Xuân Ất Tỵ 2025 – ITC vươn tầm cao mới"
+              alt="ITC Vươn Tầm Cao Mới"
               src={logoITC}
               width="50"
               height="50"
               className="d-inline-block"
             />{' '}
-            Chào Xuân Ất Tỵ 2025 – ITC vươn tầm cao mới
+            ITC Vươn Tầm Cao Mới
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
           <Navbar.Offcanvas
@@ -62,7 +62,7 @@ const NaviBar: React.FC = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
-                Chào Xuân Ất Tỵ 2025 – ITC vươn tầm cao mới
+                ITC Vươn Tầm Cao Mới
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
