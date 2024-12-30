@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Alert } from 'react-bootstrap';
 
-const InstallPrompt = () => {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+const InstallPrompt: React.FC = () => {
+  const [deferredPrompt, setDeferredPrompt] = useState<Event | null>(null);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -21,8 +21,8 @@ const InstallPrompt = () => {
 
   const handleInstall = async () => {
     if (deferredPrompt) {
-      (deferredPrompt as any).prompt();
-      const choiceResult = await (deferredPrompt as any).userChoice;
+      (deferredPrompt as Event & { prompt: () => void }).prompt();
+      const choiceResult = await (deferredPrompt as Event & { userChoice: Promise<{ outcome: string }> }).userChoice;
       if (choiceResult.outcome === 'accepted') {
         console.log('Người dùng đã cài đặt ứng dụng.');
       } else {

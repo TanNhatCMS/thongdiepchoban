@@ -1,4 +1,4 @@
-import PerpetualCalendar from '../../components/perpetualcalendar';
+import PerpetualCalendar from '../../components/PerpetualCalendar';
 
 const Home = () => {
   return (

@@ -28,7 +28,7 @@ const NaviBar: React.FC = () => {
       case '/thang-11':
       case '/thang-12': {
         const monthParameter = location.pathname.split('-')[1]
-        search = `?date=${monthParameter}-1-2025`
+        search = `?date=1-${monthParameter}-2025`
         break
       }
       default:
