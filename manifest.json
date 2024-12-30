@@ -1,0 +1,15 @@
+{
+  "name": "CHÀO XUÂN ẤT TỴ 2025 - ITC VƯƠN TẦM CAO MỚI",
+  "short_name": "ITC Lịch Tết",
+  "start_url": "%REACT_APP_START_URL%",
+  "display": "standalone",
+  "background_color": "#FFD700",
+  "theme_color": "#FFD700",
+  "icons": [
+    {
+      "src": "/logo-ITC.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
