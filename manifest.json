@@ -7,7 +7,7 @@
   "theme_color": "#FFD700",
   "icons": [
     {
-      "src": "/logo-ITC.png",
+      "src": "/images/logo-ITC.png",
       "sizes": "any",
       "type": "image/png"
     }
