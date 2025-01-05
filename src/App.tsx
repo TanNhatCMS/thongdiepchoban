@@ -4,6 +4,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'rsuite/dist/rsuite.min.css';
 import Head from './components/Head'
 import NoPage from './pages/404'
 import Home from './pages/home'
@@ -22,7 +23,9 @@ import December from './pages/december'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
+
 function App() {
+
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const date = queryParams.get('date')

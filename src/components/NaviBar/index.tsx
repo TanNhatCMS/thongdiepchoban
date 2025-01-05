@@ -28,8 +28,9 @@ const NaviBar: React.FC = () => {
       case '/thang-10':
       case '/thang-11':
       case '/thang-12': {
+        const currentYear = new Date().getFullYear();
         const monthParameter = location.pathname.split('-')[1]
-        search = `?date=1-${monthParameter}-2025`
+        search = `?date=1-${monthParameter}-${currentYear}`
         break
       }
       default:
@@ -68,6 +69,9 @@ const NaviBar: React.FC = () => {
             id="offcanvasNavbar-expand-sm"
             aria-labelledby="offcanvasNavbarLabel-expand-sm"
             placement="end"
+            show={showOffcanvas} // Ensure the offcanvas is controlled by the state
+            onHide={() => setShowOffcanvas(false)} // Ensure offcanvas hides when clicked outside
+
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
@@ -86,16 +90,17 @@ const NaviBar: React.FC = () => {
                 >
                   Lịch vạn niên - Lịch vạn sự
                 </Nav.Link>
+
                 <NavDropdown
                   title="Thông điệp 12 tháng"
                   id="offcanvasNavbarDropdown-expand-sm"
+                  key="list-month-messages"
                 >
                   {Array.from({ length: 12 }, (_, index) => {
-                    const path = `/thang-${index + 1}`
+                    const path = `/thang-${index + 1}`;
                     return (
-                      <>
+                      <React.Fragment key={index}> {/* Wrap in React.Fragment */}
                         <NavDropdown.Item
-                          key={index}
                           as={Link}
                           to={path}
                           className={isActive(path) ? 'active' : ''}
@@ -103,9 +108,9 @@ const NaviBar: React.FC = () => {
                         >
                           Thông điệp tháng {index + 1}
                         </NavDropdown.Item>
-                        {index < 11 && <NavDropdown.Divider />}
-                      </>
-                    )
+                        {index < 11 && <NavDropdown.Divider key={`divider-${index}`} />} {/* Add key to Divider */}
+                      </React.Fragment>
+                    );
                   })}
                 </NavDropdown>
               </Nav>
