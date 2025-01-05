@@ -22,10 +22,12 @@ import November from './pages/november'
 import December from './pages/december'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { useTheme } from './ThemeContext.tsx';
+import Snowflakes from './components/Snowflakes';
 
 
 function App() {
-
+  const { isAnimationEnabled   } = useTheme();
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const date = queryParams.get('date')
@@ -34,6 +36,8 @@ function App() {
     : `Xem Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành`
   return (
     <>
+      {/*isAnimationEnabled === true thì hiện Snowflakes */}
+      {isAnimationEnabled && <Snowflakes />}
       <Header />
       <Routes>
         <Route
