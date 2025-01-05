@@ -904,3 +904,89 @@ hr {
 #box3 ol, #box3 ul {
     padding-left: 20px
 }
+/* customizable snowflake styling */
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    pointer-events: none;
+    animation: snowflakes-shake 3s ease-in-out infinite, snowflakes-fall 10s linear infinite;
+}
+
+/* Snowflake animation shake */
+@keyframes snowflakes-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(80px);
+    }
+}
+
+/* Snowflake falling animation */
+@keyframes snowflakes-fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+/* Randomize position for each snowflake */
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 20%;
+    animation-delay: 0.5s, 2s;
+}
+
+.snowflake:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s, 4s;
+}
+
+.snowflake:nth-child(4) {
+    left: 40%;
+    animation-delay: 2s, 6s;
+}
+
+.snowflake:nth-child(5) {
+    left: 50%;
+    animation-delay: 3s, 8s;
+}
+
+.snowflake:nth-child(6) {
+    left: 60%;
+    animation-delay: 2s, 1s;
+}
+
+.snowflake:nth-child(7) {
+    left: 70%;
+    animation-delay: 1s, 3s;
+}
+
+.snowflake:nth-child(8) {
+    left: 80%;
+    animation-delay: 0s, 1.5s;
+}
+
+.snowflake:nth-child(9) {
+    left: 90%;
+    animation-delay: 1.5s, 3s;
+}
+
+.snowflake:nth-child(10) {
+    left: 25%;
+    animation-delay: 0s, 2s;
+}
