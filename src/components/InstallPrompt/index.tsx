@@ -7,7 +7,6 @@ const InstallPrompt: React.FC = () => {
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
       setDeferredPrompt(e);
       setShow(true);
     };
@@ -21,16 +20,16 @@ const InstallPrompt: React.FC = () => {
 
   const handleInstall = async () => {
     if (deferredPrompt) {
-      (deferredPrompt as Event & { prompt: () => void }).prompt();
-      const choiceResult = await (deferredPrompt as Event & { userChoice: Promise<{ outcome: string }> }).userChoice;
-      if (choiceResult.outcome === 'accepted') {
-        console.log('Người dùng đã cài đặt ứng dụng.');
+      const promptEvent = deferredPrompt as Event & { prompt: () => void };
+
+      if (promptEvent.prompt) {
+        promptEvent.prompt(); // Call the prompt() method here
+        setDeferredPrompt(null);
+        setShow(false);
       } else {
-        console.log('Người dùng đã từ chối cài đặt.');
+        console.error('Prompt method is not available.');
       }
-      setDeferredPrompt(null); // Reset prompt
     }
-    setShow(false); // Ẩn thông báo
   };
 
   return (
