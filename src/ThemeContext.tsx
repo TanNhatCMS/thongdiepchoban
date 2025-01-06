@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import Snowflakes from './components/Snowflakes';
 
 type Theme = 'light' | 'dark';
 
@@ -16,24 +17,49 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [isAnimationEnabled, setIsAnimationEnabled] = useState<boolean>(true);
+  const [theme, setTheme] = useState<Theme>(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return (savedTheme as Theme) || 'light';
+  });
+
+  const [isAnimationEnabled, setIsAnimationEnabled] = useState<boolean>(() => {
+    const savedAnimation = localStorage.getItem('isAnimationEnabled');
+    return savedAnimation !== 'false';
+  });
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      return newTheme;
+    });
   };
 
   const toggleAnimation = () => {
-    setIsAnimationEnabled((prev) => !prev);
+    setIsAnimationEnabled((prev) => {
+      const newAnimationState = !prev;
+      localStorage.setItem('isAnimationEnabled', String(newAnimationState));
+      return newAnimationState;
+    });
   };
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('isAnimationEnabled', String(isAnimationEnabled));
+  }, [isAnimationEnabled]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isAnimationEnabled, toggleAnimation }}>
+      {isAnimationEnabled && <Snowflakes />}
       {children}
     </ThemeContext.Provider>
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
