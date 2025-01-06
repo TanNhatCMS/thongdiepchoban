@@ -12,8 +12,9 @@ const DateForm: React.FC = () => {
   dayjs.extend(customParseFormat);
   const navigate = useNavigate()
   const queryParams = new URLSearchParams(location.search);
-  const date = queryParams.get('date') || new Date().toISOString().slice(0, 10);
-  const initialDate = dayjs(date, 'D-M-YYYY').toDate()
+  const dateParam = queryParams.get('date');
+  const initialDate = dateParam ? dayjs(dateParam, 'D-M-YYYY').toDate() : new Date();
+
   const [selectedDate, setSelectedDate] = useState<Date>(initialDate)
 
   const predefinedRanges = [
