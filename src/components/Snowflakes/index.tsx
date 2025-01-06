@@ -1,15 +1,22 @@
 import React from 'react'
+import styles from './Snowflakes.module.css'
 
 const Snowflakes: React.FC = () => {
-  const snowflakes = new Array(12).fill(null) // Tạo mảng 12 phần tử tuyết
 
   return (
-    <div className="snowflakes" aria-hidden="true">
-      {snowflakes.map((_, index) => (
-        <div key={index} className="snowflake">
-          <div className="inner">❅</div>
-        </div>
-      ))}
+    <div className={styles.snowflakes} aria-hidden="true">
+          <div className={styles.snowflake}>❅</div>
+          <div className={styles.snowflake}>❆</div>
+          <div className={styles.snowflake}>❅</div>
+          <div className={styles.snowflake}>❆</div>
+          <div className={styles.snowflake}>❅</div>
+          <div className={styles.snowflake}>❆</div>
+          <div className={styles.snowflake}>❅</div>
+          <div className={styles.snowflake}>❆</div>
+          <div className={styles.snowflake}>❅</div>
+          <div className={styles.snowflake}>❆</div>
+          <div className={styles.snowflake}>❅</div>
+          <div className={styles.snowflake}>❆</div>
     </div>
   )
 }
