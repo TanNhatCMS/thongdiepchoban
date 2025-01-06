@@ -12,7 +12,7 @@ const AnimationShow: React.FC = () => {
   const currentMonth = currentDate.getMonth(); // Lấy tháng
   const currentDay = currentDate.getDate(); // Lấy ngày trong tháng
 
-  const isWinter = currentMonth === 11 || currentMonth <= 1; // Kiểm tra nếu là mùa đông
+  const isWinter = currentMonth === 12; // Kiểm tra nếu là mùa đông
   const isBirthday = currentMonth === 3 && currentDay === 27; // Kiểm tra nếu là ngày 27 tháng 4
 
   return (
