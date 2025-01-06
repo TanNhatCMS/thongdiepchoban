@@ -22,12 +22,8 @@ import November from './pages/november'
 import December from './pages/december'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { useTheme } from './ThemeContext.tsx';
-import Snowflakes from './components/Snowflakes';
-
 
 function App() {
-  const { isAnimationEnabled   } = useTheme();
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const date = queryParams.get('date')
