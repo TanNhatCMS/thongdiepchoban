@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import Snowflakes from './components/Snowflakes';
 
 type Theme = 'light' | 'dark';
 
@@ -12,11 +11,11 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-interface ThemeProviderProps {
+interface ProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: React.FC<ProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const savedTheme = localStorage.getItem('theme');
     return (savedTheme as Theme) || 'light';
@@ -53,13 +52,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isAnimationEnabled, toggleAnimation }}>
-      {isAnimationEnabled && <Snowflakes />}
       {children}
     </ThemeContext.Provider>
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
