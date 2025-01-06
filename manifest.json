@@ -1,11 +1,11 @@
 {
-  "name": "Thông Điệp Cho Bạn - ITC VƯƠN TẦM CAO MỚI",
+  "name": "Thông Điệp Cho Bạn - Mừng Xuân Ất Tỵ ITC VƯƠN TẦM CAO MỚI",
   "short_name": "Thông Điệp Cho Bạn",
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FFD700",
   "theme_color": "#FFD700",
-  "description": "Thông Điệp Cho Bạn - Xuân Ất Tỵ ITC VƯƠN TẦM CAO MỚI. Xem lịch vạn niên - vạn sự",
+  "description": "Thông Điệp Cho Bạn - Mừng Xuân Ất Tỵ ITC VƯƠN TẦM CAO MỚI. Xem lịch vạn niên - vạn sự",
   "version": "0.1.1",
   "icons": [
     {
