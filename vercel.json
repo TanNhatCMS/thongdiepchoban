@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "github": {
+    "autoJobCancelation": false,
+    "silent": true
+  },
+  "public": true,
+  "trailingSlash": true
+}
