@@ -36,8 +36,6 @@ function App() {
     : `Xem Lịch vạn niên | Lịch vạn sự | Xem ngày tốt xấu - khởi công động thổ khai trương, xuất hành`
   return (
     <>
-      {/*isAnimationEnabled === true thì hiện Snowflakes */}
-      {isAnimationEnabled && <Snowflakes />}
       <Header />
       <Routes>
         <Route
