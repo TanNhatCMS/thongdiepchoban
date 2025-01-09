@@ -23,9 +23,7 @@ import December from './pages/december'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-
 function App() {
-
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
   const date = queryParams.get('date')

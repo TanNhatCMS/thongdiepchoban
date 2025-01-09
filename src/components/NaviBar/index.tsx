@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Toggle } from 'rsuite';
 import { Link, useLocation } from 'react-router-dom' // Import Link từ react-router-dom
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -6,8 +7,11 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import logoITC from '../../assets/images/logo-svg-ITC.svg'
+import GearIcon from '@rsuite/icons/Gear';
+import { useTheme } from '../../ThemeContext.tsx';
 
 const NaviBar: React.FC = () => {
+  const { isAnimationEnabled , toggleAnimation  } = useTheme();
   const location = useLocation()
   const [showOffcanvas, setShowOffcanvas] = useState(false)
   const isActive = (path: string) => location.pathname === path
@@ -71,7 +75,6 @@ const NaviBar: React.FC = () => {
             placement="end"
             show={showOffcanvas} // Ensure the offcanvas is controlled by the state
             onHide={() => setShowOffcanvas(false)} // Ensure offcanvas hides when clicked outside
-
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
@@ -97,9 +100,11 @@ const NaviBar: React.FC = () => {
                   key="list-month-messages"
                 >
                   {Array.from({ length: 12 }, (_, index) => {
-                    const path = `/thang-${index + 1}`;
+                    const path = `/thang-${index + 1}`
                     return (
-                      <React.Fragment key={index}> {/* Wrap in React.Fragment */}
+                      <React.Fragment key={index}>
+                        {' '}
+                        {/* Wrap in React.Fragment */}
                         <NavDropdown.Item
                           as={Link}
                           to={path}
@@ -108,11 +113,20 @@ const NaviBar: React.FC = () => {
                         >
                           Thông điệp tháng {index + 1}
                         </NavDropdown.Item>
-                        {index < 11 && <NavDropdown.Divider key={`divider-${index}`} />} {/* Add key to Divider */}
+                        {index < 11 && (
+                          <NavDropdown.Divider key={`divider-${index}`} />
+                        )}{' '}
+                        {/* Add key to Divider */}
                       </React.Fragment>
-                    );
+                    )
                   })}
                 </NavDropdown>
+                <Toggle
+                  checked={isAnimationEnabled}
+                  checkedChildren={ <GearIcon spin />}
+                  unCheckedChildren={ <GearIcon />}
+                  onChange={toggleAnimation}
+                ></Toggle>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
