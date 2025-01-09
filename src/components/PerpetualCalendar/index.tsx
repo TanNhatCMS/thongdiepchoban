@@ -193,6 +193,9 @@ const PerpetualCalendar: React.FC = () => {
               <div
                 className="col col6"
                 id="box1"
+                style={{
+                  textShadow: '3px 3px 5px rgba(255, 255, 255, 0.7)'
+                }}
                 dangerouslySetInnerHTML={{ __html: content.box1 }}
               />
             )}
