@@ -6,7 +6,8 @@ import App from './App'
 import { CustomProvider } from 'rsuite'
 import viVN from './utils/locale/vi_VN'
 import { ThemeProvider } from './ThemeContext'
-
+import { StyledEngineProvider } from '@mui/material/styles';
+import InstallPrompt from './components/InstallPrompt'
 const container = document.getElementById('root')
 
 if (container) {
@@ -14,13 +15,16 @@ if (container) {
 
   root.render(
     <StrictMode>
+      <StyledEngineProvider injectFirst>
       <CustomProvider locale={viVN}>
         <ThemeProvider>
           <BrowserRouter>
             <App />
+            <InstallPrompt />
           </BrowserRouter>
         </ThemeProvider>
       </CustomProvider>
+      </StyledEngineProvider>
     </StrictMode>
   )
 } else {
