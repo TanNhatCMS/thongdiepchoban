@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import DateForm from '../DateForm'
-import LoadingPage from '../LoadingPage'
+import Spinner from '../Spinner'
 
 const PerpetualCalendar: React.FC = () => {
   const location = useLocation()
@@ -28,7 +28,7 @@ const PerpetualCalendar: React.FC = () => {
       )
       .replace(/href="([^"]+)"/g, (_match, p1) => {
         const sanitizedUrl = encodeURI(decodeURI(p1)) // Đảm bảo URL an toàn
-        return `href="${sanitizedUrl}" data-link="${sanitizedUrl}"`
+        return `href="javascript:void(0)" data-link="${sanitizedUrl}"`
       })
   }, [])
 
@@ -131,7 +131,7 @@ const PerpetualCalendar: React.FC = () => {
   }, [content, navigate])
 
   if (isLoading) {
-    return <LoadingPage />
+    return <Spinner />
   }
 
   if (error) {
