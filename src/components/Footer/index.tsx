@@ -1,17 +1,16 @@
-import React from 'react';
-import InstallPrompt from '../InstallPrompt';
-import { useTheme } from '../../ThemeContext';
+import React from 'react'
+import { useTheme } from '../../ThemeContext'
 import AnimationShow from '../AnimationShow'
+import MobileNavi from '../MobileNavi'
 
-const Footer : React.FC = () => {
- const { isAnimationEnabled } = useTheme();
+const Footer: React.FC = () => {
+  const { isAnimationEnabled } = useTheme()
   return (
     <>
-      <InstallPrompt />
       {isAnimationEnabled && <AnimationShow />}
-
+      <MobileNavi />
     </>
-  );
+  )
 }
 
 export default Footer
