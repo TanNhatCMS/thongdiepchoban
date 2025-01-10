@@ -167,19 +167,13 @@ a:not([href]):not([tabindex]):focus {
     outline: 0
 }
 
-code, kbd, pre, samp {
-    font-family: monospace, monospace;
-    font-size: 1em
-}
 
 pre {
     margin-bottom: 1rem;
     -ms-overflow-style: scrollbar
 }
 
-img {
-    border-style: none
-}
+
 
 svg:not(:root) {
     overflow: hidden
@@ -316,7 +310,7 @@ template {
 }
 
 .bg-body, .boxpdl {
-    background: #fff
+
 }
 
 .pt {
@@ -566,13 +560,7 @@ template {
     float: right
 }
 
-.mr-1 {
-    margin-right: .25em
-}
 
-.ml-1 {
-    margin-left: .25em
-}
 
 hr {
     margin-top: 1rem;

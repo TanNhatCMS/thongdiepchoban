@@ -2,14 +2,34 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import DateForm from '../DateForm'
-import LoadingPage from '../LoadingPage'
+import Spinner from '../Spinner'
+import { Box } from '@mui/material'
+import img0 from '../../assets/images/bg/bg_0.png'
+import img1 from '../../assets/images/bg/bg_1.png'
+import img2 from '../../assets/images/bg/bg_2.png'
+import img3 from '../../assets/images/bg/bg_3.png'
+import img4 from '../../assets/images/bg/bg_4.png'
+import img5 from '../../assets/images/bg/bg_5.png'
+import img6 from '../../assets/images/bg/bg_6.png'
+import img7 from '../../assets/images/bg/bg_7.png'
+import img8 from '../../assets/images/bg/bg_8.png'
+import img9 from '../../assets/images/bg/bg_9.png'
+import img10 from '../../assets/images/bg/bg_10.png'
+import img11 from '../../assets/images/bg/bg_11.png'
+import img12 from '../../assets/images/bg/bg_12.png'
+import img13 from '../../assets/images/bg/bg_13.png'
+import img14 from '../../assets/images/bg/bg_14.png'
+import img15 from '../../assets/images/bg/bg_15.png'
+import img16 from '../../assets/images/bg/bg_16.png'
+import img17 from '../../assets/images/bg/bg_17.png'
 
 const PerpetualCalendar: React.FC = () => {
   const location = useLocation()
   const navigate = useNavigate()
+  const ref = React.useRef<HTMLDivElement>(null)
   const queryParams = new URLSearchParams(location.search)
   const date = queryParams.get('date') || new Date().toISOString().slice(0, 10) // Mặc định ngày hiện tại nếu không có ngày
-
+  const action = queryParams.get('action') || 'all'
   const [result, setResult] = useState<any>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
@@ -18,6 +38,12 @@ const PerpetualCalendar: React.FC = () => {
     box2: '',
     box3: '',
   })
+
+  const imagePaths = [
+    img0, img1, img2, img3, img4, img5, img6, img7, img8, img9,
+    img10, img11, img12, img13, img14, img15, img16, img17
+  ]
+  const [backgroundImage, setBackgroundImage] = useState<string>('')
 
   // Hàm để xử lý URL trong nội dung HTML
   const fixURL = useCallback((htmlString: string): string => {
@@ -28,10 +54,15 @@ const PerpetualCalendar: React.FC = () => {
       )
       .replace(/href="([^"]+)"/g, (_match, p1) => {
         const sanitizedUrl = encodeURI(decodeURI(p1)) // Đảm bảo URL an toàn
-        return `href="${sanitizedUrl}" data-link="${sanitizedUrl}"`
+        return `href="javascript:void(0)" data-link="${sanitizedUrl}"`
       })
   }, [])
-
+  const addBG = useCallback((htmlString: string): string => {
+    return htmlString.replaceAll(
+      'class="calendarblock boxpdl"',
+      `class="calendarblock boxpdl" style="position: relative;  background-image: url('${backgroundImage}'); background-size: cover;  background-position: center;"`
+    )
+  }, [backgroundImage])
   // Hàm để xử lý sự kiện kỷ niệm trong nội dung
   const addEvent = useCallback((text: string) => {
     const baseDate = new Date('2001-04-27') // Ngày thành lập là 27/04/2001
@@ -77,10 +108,8 @@ const PerpetualCalendar: React.FC = () => {
         date,
       },
     }
-
     setIsLoading(true)
     setError(null)
-
     try {
       const response = await axios.post(
         'https://xuanthulab.net/api/',
@@ -91,16 +120,30 @@ const PerpetualCalendar: React.FC = () => {
           },
         }
       )
-
-      const box1 = fixURL(response.data?.result?.box1) || ''
-      const box2 = fixURL(addEvent(response.data?.result?.box2)) || ''
-      const box3 = fixURL(response.data?.result?.box3) || ''
-
-      setContent({
-        box1,
-        box2,
-        box3,
-      })
+      switch (action) {
+        case 'day':
+          setContent({
+            box1: fixURL(addBG(response.data?.result?.box1)) || '',
+            box2: '',
+            box3: '',
+          })
+          break
+        case 'month':
+          setContent({
+            box1: '',
+            box2: fixURL(addEvent(response.data?.result?.box2)) || '',
+            box3: '',
+          })
+          break
+        case 'all':
+        default:
+          setContent({
+            box1: fixURL(addBG(response.data?.result?.box1)) || '',
+            box2: fixURL(addEvent(response.data?.result?.box2)) || '',
+            box3: fixURL(response.data?.result?.box3) || '',
+          })
+          break
+      }
       setResult(response.data)
     } catch (err: any) {
       setError(err.message || 'An error occurred')
@@ -108,10 +151,12 @@ const PerpetualCalendar: React.FC = () => {
       setIsLoading(false)
     }
   }
-
   useEffect(() => {
     fetchData()
-  }, [date])
+    const randomIndex = Math.floor(Math.random() * imagePaths.length)
+    setBackgroundImage(imagePaths[randomIndex])
+    console.log(imagePaths[randomIndex])
+  }, [location])
 
   useEffect(() => {
     const links = document.querySelectorAll('[data-link]')
@@ -131,7 +176,7 @@ const PerpetualCalendar: React.FC = () => {
   }, [content, navigate])
 
   if (isLoading) {
-    return <LoadingPage />
+    return <Spinner />
   }
 
   if (error) {
@@ -139,34 +184,45 @@ const PerpetualCalendar: React.FC = () => {
   }
 
   return (
-    <div>
+    <>
       {result && (
-        <>
+        <Box sx={{ pb: 7 }} ref={ref}>
           <DateForm />
           <div className="container row pt pb bg-body">
-            <div
-              className="col col6"
-              id="box1"
-              dangerouslySetInnerHTML={{ __html: content.box1 }}
-            />
-            <div className="col col6">
+            {content.box1 !== '' && (
               <div
-                className="calendarblock boxpdl"
-                id="box2"
-                dangerouslySetInnerHTML={{ __html: content.box2 }}
+                className="col col6"
+                id="box1"
+                style={{
+                  textShadow: '3px 3px 5px rgba(255, 255, 255, 0.7)'
+                }}
+                dangerouslySetInnerHTML={{ __html: content.box1 }}
               />
-            </div>
+            )}
+
+            {content.box2 !== '' && (
+              <div className="col col6">
+                <div
+                  className="calendarblock boxpdl"
+                  id="box2"
+                  dangerouslySetInnerHTML={{ __html: content.box2 }}
+                />
+              </div>
+            )}
           </div>
           <div className="container row pb bg-body">
-            <div
-              className="col"
-              id="box3"
-              dangerouslySetInnerHTML={{ __html: content.box3 }}
-            />
+            {content.box3 !== '' && (
+              <div
+                className="col"
+                id="box3"
+                dangerouslySetInnerHTML={{ __html: content.box3 }}
+              />
+            )}
           </div>
-        </>
+          <div className="d-flex align-items-center justify-content-between mx-2 mt-1 placement-bottom-end" />
+        </Box>
       )}
-    </div>
+    </>
   )
 }
 
