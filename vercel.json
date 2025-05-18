@@ -2,13 +2,16 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
   ],
-  "github": {
-    "autoJobCancelation": false,
-    "silent": true
-  },
+  "trailingSlash": true,
   "public": true,
-  "trailingSlash": true
+  "builds": [
+    {
+      "src": "build/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "cleanUrls": true
 }
