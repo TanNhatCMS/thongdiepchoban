@@ -43,7 +43,7 @@ importers:
         version: 8.32.1(eslint@9.27.0)(typescript@5.8.3)
       '@vercel/react-router':
         specifier: ^1.1.0
-        version: 1.2.0(@react-router/dev@7.6.0(@types/node@22.15.21)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(yaml@2.8.0))(yaml@2.8.0))(@react-router/node@7.6.0(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3))(isbot@5.1.28)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 1.2.1(@react-router/dev@7.6.0(@types/node@22.15.21)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(yaml@2.8.0))(yaml@2.8.0))(@react-router/node@7.6.0(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3))(isbot@5.1.28)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       axios:
         specifier: ^1.7.9
         version: 1.9.0
@@ -1277,8 +1277,8 @@ packages:
     resolution: {integrity: sha512-ar0tjQfObzhSaW3C3QNmTc5ofj0hDoNQ5XWrCy6zDyabdr0TWhCkClp+rywGNj/odAFBVzzJrK4tEq5M4Hmu4w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@vercel/react-router@1.2.0':
-    resolution: {integrity: sha512-37PYcLO97ZfwFTIrJXxvV3LtA+ZS5/+XZKQwTAqkDyFVrCOXJSpRl5+y3SJiWvoi9JSeUHnu6gjYliI3KCqAzg==}
+  '@vercel/react-router@1.2.1':
+    resolution: {integrity: sha512-5rPOAB/i7lWyg0nx9EbHX21iHPaBR3Lzbf2Ak/4DWhnli4a3dNes0wAovgGF9QZwgrJetppo1LNzWgr4ug6r6A==}
     peerDependencies:
       '@react-router/dev': '7'
       '@react-router/node': '7'
@@ -4446,7 +4446,7 @@ snapshots:
       '@typescript-eslint/types': 8.32.1
       eslint-visitor-keys: 4.2.0
 
-  '@vercel/react-router@1.2.0(@react-router/dev@7.6.0(@types/node@22.15.21)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(yaml@2.8.0))(yaml@2.8.0))(@react-router/node@7.6.0(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3))(isbot@5.1.28)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@vercel/react-router@1.2.1(@react-router/dev@7.6.0(@types/node@22.15.21)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(yaml@2.8.0))(yaml@2.8.0))(@react-router/node@7.6.0(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3))(isbot@5.1.28)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@react-router/dev': 7.6.0(@types/node@22.15.21)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(yaml@2.8.0))(yaml@2.8.0)
       '@react-router/node': 7.6.0(react-router@7.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)
