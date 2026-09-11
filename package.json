@@ -75,7 +75,7 @@
     "prettier": "^3.9.4",
     "typescript": "^5.9.3",
     "vite": "^6.4.3",
-    "vitest": "^4.1.9"
+    "vitest": "^5.0.0"
   },
   "lint-staged": {
     "*.{tsx,ts}": [
